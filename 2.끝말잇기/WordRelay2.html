@@ -10,11 +10,11 @@
 <body>
 <div id="root">
     <word-relay start-word="써니"></word-relay> <!-- 중복을 막기 위해 Vue.component를 활용 -->
-    <word-relay start-word="니니즈"></word-relay>
+    <word-relay start-word="니니즈"></word-relay> <!-- vue는 start-word와 같이 케밥케이스로 써줘야함. 리액트는 이걸 camel case 로 쓴다-->
     <word-relay start-word="죠르디"></word-relay>
 </div>
 <script>
-    Vue.component("wordRelay", { // 전역 컴포넌트 (vs 로컬 컴포넌트)
+    Vue.component("wordRelay", { // 전역 컴포넌트 (vs 로컬 컴포넌트),, 자바스크립트는 kebab case를 camel case로 바꿔 처리한다.
         // 컴포넌트의 template는 최상위 태그 1개로 그룹이 될수 있어야한다.
         // 이전 WordRelay에서는 root밑에 세개 태그로 구성되어있어서, 세개 태그를 그대로 가져오면 문제가되기때문에
         // div로 묶어줘야한다.
